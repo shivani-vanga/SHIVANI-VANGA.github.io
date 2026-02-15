@@ -1,273 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shivani Vanga | Data Engineer & Analyst</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivani Vanga | Data Engineer & Analyst</title>
 
-<style>
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    background:#f4f4f4;
-    color:#111;
-  }
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#0b3b6d;
+      --bg3:#5a189a;
+      --card: rgba(255,255,255,0.10);
+      --card2: rgba(255,255,255,0.14);
+      --stroke: rgba(255,255,255,0.18);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --shadow: 0 18px 60px rgba(0,0,0,0.35);
+    }
 
-  .container{
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 96px 20px;
-  }
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 10% 10%, rgba(79,70,229,0.55), transparent 60%),
+        radial-gradient(1000px 650px at 90% 25%, rgba(34,197,94,0.35), transparent 55%),
+        radial-gradient(900px 600px at 50% 95%, rgba(236,72,153,0.35), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 45%, var(--bg3));
+      min-height: 100vh;
+      overflow-x:hidden;
+    }
 
-  h1{
-    font-size: 52px;
-    margin: 0 0 10px;
-    letter-spacing: -0.5px;
-  }
+    /* decorative blobs */
+    .blob{
+      position: fixed;
+      inset: auto;
+      width: 520px; height: 520px;
+      filter: blur(55px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 999px;
+      transform: translate3d(0,0,0);
+    }
+    .b1{ top:-180px; left:-180px; background: #22c55e; }
+    .b2{ top:120px; right:-220px; background: #3b82f6; }
+    .b3{ bottom:-240px; left:25%; background: #ec4899; }
 
-  .subtitle{
-    font-size: 20px;
-    font-weight: 600;
-    color:#3f3f3f;
-    margin-bottom: 18px;
-  }
+    .wrap{
+      position: relative;
+      z-index: 1;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 26px 18px 90px;
+    }
 
-  .description{
-    font-size: 18px;
-    color:#555;
-    line-height: 1.7;
-    margin-bottom: 28px;
-    max-width: 760px;
-  }
+    /* top nav */
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+    }
 
-  .buttons{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 70px;
-  }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 200px;
+    }
+    .dot{
+      width: 12px; height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #3b82f6, #ec4899);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.07);
+    }
+    .brand strong{
+      font-size: 14px;
+      letter-spacing: 0.2px;
+    }
+    .links{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content:flex-end;
+    }
+    .links a{
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      transition: 0.18s ease;
+    }
+    .links a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-1px);
+    }
 
-  .btn{
-    background:#1e63b5;
-    color:#fff;
-    padding: 12px 22px;
-    border-radius: 10px;
-    text-decoration:none;
-    font-weight: 600;
-    display:inline-block;
-    transition: 0.18s ease;
-  }
-  .btn:hover{ background:#154a87; }
+    /* hero */
+    .hero{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 18px;
+      align-items: stretch;
+    }
 
-  .btn.secondary{
-    background:#e9eef7;
-    color:#1e63b5;
-  }
-  .btn.secondary:hover{
-    background:#dbe6fb;
-  }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
 
-  .section{
-    margin: 0 0 56px;
-  }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: 52px;
+      letter-spacing: -0.8px;
+      line-height: 1.02;
+    }
 
-  .section h2{
-    font-size: 28px;
-    margin: 0 0 16px;
-    letter-spacing: -0.2px;
-  }
+    .titleline{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+      margin: 0 0 14px;
+    }
 
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
+    .badge{
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.88);
+    }
+    .badge.gradient{
+      border: none;
+      background: linear-gradient(135deg, rgba(34,197,94,0.90), rgba(59,130,246,0.90), rgba(236,72,153,0.90));
+      color: #0b1020;
+    }
 
-  .pillbox{
-    background:#fff;
-    border-radius: 14px;
-    padding: 18px 18px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  }
+    .subtitle{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-  .pillbox h3{
-    margin: 0 0 10px;
-    font-size: 18px;
-  }
+    .ctaRow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+      transition: 0.18s ease;
+      min-width: 150px;
+    }
+    .btn:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,0.30); }
+    .btn.primary{
+      border: none;
+      color: #081126;
+      background: linear-gradient(135deg, #22c55e, #3b82f6, #ec4899);
+    }
+    .btn.primary:hover{ filter: brightness(1.05); }
 
-  .pillbox p{
-    margin: 0;
-    color:#555;
-    line-height: 1.6;
-  }
+    .mini{
+      display:grid;
+      gap: 12px;
+      height: 100%;
+    }
 
-  .card{
-    background:#fff;
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    margin-bottom: 14px;
-  }
+    .mini .tile{
+      background: var(--card2);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 18px;
+      padding: 14px 14px;
+      backdrop-filter: blur(12px);
+      transition: 0.18s ease;
+    }
+    .mini .tile:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,0.28); }
+    .k{
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .v{
+      font-weight: 800;
+      font-size: 14px;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.35;
+    }
+    .v a{ color: rgba(255,255,255,0.92); text-decoration: none; }
+    .v a:hover{ text-decoration: underline; }
 
-  .card h3{
-    margin: 0 0 8px;
-    font-size: 20px;
-  }
+    /* sections */
+    .section{
+      margin-top: 22px;
+    }
+    .sectionHeader{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 28px 0 14px;
+    }
+    .sectionHeader h2{
+      margin:0;
+      font-size: 26px;
+      letter-spacing: -0.3px;
+    }
+    .sectionHeader p{
+      margin:0;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+    }
 
-  .meta{
-    font-size: 14px;
-    color:#666;
-    margin-bottom: 10px;
-  }
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
 
-  ul{
-    margin: 10px 0 0;
-    padding-left: 18px;
-    color:#444;
-    line-height: 1.65;
-  }
+    .chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .chip{
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      transition: 0.18s ease;
+    }
+    .chip:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,0.28); }
+    .c1{ background: rgba(34,197,94,0.18); }
+    .c2{ background: rgba(59,130,246,0.18); }
+    .c3{ background: rgba(236,72,153,0.18); }
+    .c4{ background: rgba(251,191,36,0.18); }
+    .c5{ background: rgba(167,139,250,0.18); }
 
-  a.inline{
-    color:#1e63b5;
-    text-decoration:none;
-    font-weight:600;
-  }
-  a.inline:hover{ text-decoration:underline; }
+    .role{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .role h3{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .role .meta{
+      margin: 3px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.78);
+    }
 
-  .footer{
-    margin-top: 70px;
-    font-size: 14px;
-    color:#777;
-  }
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.7;
+    }
 
-  @media (max-width: 760px){
-    h1{ font-size: 40px; }
-    .grid{ grid-template-columns: 1fr; }
-    .container{ padding: 72px 18px; }
-  }
-</style>
+    .note{
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer{
+      margin-top: 58px;
+      text-align:center;
+      color: rgba(255,255,255,0.60);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    @media (max-width: 880px){
+      .hero{ grid-template-columns: 1fr; }
+      .container{ padding-top: 70px; }
+      .hero h1{ font-size: 44px; }
+    }
+    @media (max-width: 520px){
+      .grid2{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 38px; }
+      .btn{ min-width: 0; width: 100%; }
+      .ctaRow{ width: 100%; }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
 
-    <!-- HERO -->
-    <h1>Shivani Vanga</h1>
-    <div class="subtitle">Data Engineer & Analyst · SQL · Python · PySpark · Azure · Power BI</div>
+  <div class="wrap">
 
-    <div class="description">
-      Data Engineer & Analyst with hands-on experience in data analysis, reporting, and analytics automation.
-      Skilled in building ETL pipelines, cleaning and validating data, and delivering KPI dashboards that support
-      executive decision-making.
+    <!-- NAV -->
+    <div class="nav">
+      <div class="brand">
+        <div class="dot"></div>
+        <strong>Shivani Vanga</strong>
+      </div>
+      <div class="links">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
 
-    <div class="buttons">
-      <!-- Option A: If you upload resume.pdf to the repo, keep this -->
-      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card">
+        <div class="titleline">
+          <span class="badge gradient">Open to Relocate</span>
+          <span class="badge">Data Engineer & Analyst</span>
+        </div>
 
-      <!-- Option B (recommended): Gmail compose always works -->
-      <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=shivanivanga.reddy@gmail.com&su=Portfolio%20Inquiry"
-         target="_blank" rel="noopener">Email Me</a>
+        <h1>Shivani Vanga</h1>
 
-      <!-- Optional: LinkedIn (replace with your real link) -->
-      <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <p class="subtitle">
+          Hands-on experience specializing in data analysis, reporting, and analytics automation.
+          Strong expertise in <b>SQL, Python, PySpark, Azure, Power BI, and Tableau</b> with focus on
+          <b>data cleaning, validation, KPI tracking, and ad-hoc analysis</b>. :contentReference[oaicite:1]{index=1}
+        </p>
+
+        <div class="ctaRow">
+          <!-- Upload resume.pdf to the same folder as index.html -->
+          <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">✨ View Resume</a>
+
+          <!-- Gmail compose = always works -->
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=shivanivanga.reddy@gmail.com&su=Portfolio%20Inquiry"
+             target="_blank" rel="noopener">📩 Email Me</a>
+        </div>
+
+        <div class="note">
+          Tip: Upload your resume as <b>resume.pdf</b> in the same repo folder so the button works.
+        </div>
+      </div>
+
+      <div class="mini">
+        <div class="tile">
+          <div class="k">Location</div>
+          <div class="v">Texas, USA</div>
+        </div>
+        <div class="tile">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a> :contentReference[oaicite:3]{index=3}</div>
+        </div>
+        <div class="tile">
+          <div class="k">Phone</div>
+          <div class="v">+1 (850) 964-4733 :contentReference[oaicite:4]{index=4}</div>
+        </div>
+        <div class="tile">
+          <div class="k">Core Stack</div>
+          <div class="v">SQL · Python · PySpark · Azure · Power BI · Tableau</div>
+        </div>
+      </div>
     </div>
 
     <!-- SKILLS -->
-    <div class="section">
-      <h2>Skills</h2>
+    <div class="section" id="skills">
+      <div class="sectionHeader">
+        <h2>Skills</h2>
+        <p>Tools I use to build reliable data workflows</p>
+      </div>
 
-      <div class="grid">
-        <div class="pillbox">
-          <h3>Programming & Querying</h3>
-          <p>Python (Pandas, NumPy, Scikit-learn, Matplotlib), SQL, MySQL, Core Java </p>
+      <div class="grid2">
+        <div class="card">
+          <div class="role">
+            <h3>Programming & Querying</h3>
+            <div class="meta">Build · Analyze · Automate</div>
+          </div>
+          <div class="chips">
+            <span class="chip c2">Python (Pandas, NumPy)</span>
+            <span class="chip c2">Scikit-learn</span>
+            <span class="chip c2">Matplotlib</span>
+            <span class="chip c4">SQL</span>
+            <span class="chip c4">MySQL</span>
+            <span class="chip c5">Core Java</span>
+          </div>
+          <div class="note">:contentReference[oaicite:6]{index=6}</div>
         </div>
 
-        <div class="pillbox">
-          <h3>Visualization</h3>
-          <p>Power BI (DAX, Dashboards, Reports), Tableau, Excel (Pivot Tables, VLOOKUP), Google Sheets </p>
+        <div class="card">
+          <div class="role">
+            <h3>Visualization</h3>
+            <div class="meta">Dashboards · KPI Tracking</div>
+          </div>
+          <div class="chips">
+            <span class="chip c3">Power BI (DAX)</span>
+            <span class="chip c3">Tableau</span>
+            <span class="chip c4">Excel (Pivot, VLOOKUP)</span>
+            <span class="chip c4">Google Sheets</span>
+          </div>
+          <div class="note">:contentReference[oaicite:7]{index=7}</div>
         </div>
 
-        <div class="pillbox">
-          <h3>Data Engineering</h3>
-          <p>PySpark, Apache Spark, Hadoop, ETL, Data Warehousing </p>
+        <div class="card">
+          <div class="role">
+            <h3>Data Engineering</h3>
+            <div class="meta">ETL · Pipelines · Scale</div>
+          </div>
+          <div class="chips">
+            <span class="chip c1">PySpark</span>
+            <span class="chip c1">Apache Spark</span>
+            <span class="chip c1">Hadoop</span>
+            <span class="chip c5">Data Warehousing</span>
+            <span class="chip c5">ETL</span>
+          </div>
+          <div class="note">:contentReference[oaicite:8]{index=8}</div>
         </div>
 
-        <div class="pillbox">
-          <h3>Cloud & Tools</h3>
-          <p>Azure, AWS (S3 – basic), Kubernetes, CI/CD, Git, REST APIs</p>
+        <div class="card">
+          <div class="role">
+            <h3>Cloud & Professional Strengths</h3>
+            <div class="meta">Deploy · Collaborate</div>
+          </div>
+          <div class="chips">
+            <span class="chip c2">Azure</span>
+            <span class="chip c2">AWS (S3 - basic)</span>
+            <span class="chip c5">Kubernetes</span>
+            <span class="chip c5">CI/CD</span>
+            <span class="chip c4">Git</span>
+            <span class="chip c3">REST APIs</span>
+            <span class="chip c1">Stakeholder Communication</span>
+          </div>
+          <div class="note">:contentReference[oaicite:9]{index=9}</div>
         </div>
       </div>
     </div>
 
     <!-- EXPERIENCE -->
-    <div class="section">
-      <h2>Experience</h2>
+    <div class="section" id="experience">
+      <div class="sectionHeader">
+        <h2>Experience</h2>
+        <p>Impact across reporting, pipelines, and dashboards</p>
+      </div>
 
       <div class="card">
-        <h3>Data Engineer — Community Dreams Foundation</h3>
-        <div class="meta">Remote, USA · Sept 2025 – Present</div>
+        <div class="role">
+          <h3>Data Engineer — Community Dreams Foundation</h3>
+          <div class="meta">Remote, USA · Sept 2025 – Present</div>
+        </div>
         <ul>
           <li>Designed and maintained end-to-end ETL pipelines using Python, PySpark, and Azure Data Factory for reliable ingestion and transformation of structured datasets.</li>
-          <li>Implemented data cleansing, normalization, and validation using Pandas and SQL to improve accuracy and consistency across downstream dashboards.</li>
-          <li>Optimized processing workflows with Apache Spark to reduce processing time and improve scalability for growing datasets.</li>
+          <li>Implemented data cleansing, normalization, and validation using Pandas and SQL to improve data accuracy across dashboards.</li>
+          <li>Optimized workflows with Apache Spark to reduce processing time and improve scalability for growing datasets.</li>
           <li>Built Power BI dashboards and KPI scorecards for leadership to track operational and performance metrics.</li>
-          <li>Gathered requirements and defined KPIs with stakeholders; translated analytical needs into technical data solutions.</li>
-          <li>Developed REST APIs using Flask to expose processed data for internal analytics tools and applications; collaborated with React teams for integration.</li>
-          <li>Supported cloud deployment and version control workflows using Azure, Git, and CI/CD practices with documentation.</li>
+          <li>Gathered requirements, defined KPIs, and translated business needs into technical data solutions.</li>
+          <li>Developed RESTful APIs using Flask and collaborated with React teams to integrate analytics outputs into user-facing apps.</li>
+          <li>Supported deployments and version control using Azure, Git, and CI/CD practices with clear documentation.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Data Analyst — Inventive Core Integrations</h3>
-        <div class="meta">Telangana, India · June 2022 – July 2023</div>
+        <div class="role">
+          <h3>Data Analyst — Inventive Core Integrations</h3>
+          <div class="meta">Telangana, India · June 2022 – July 2023 :contentReference[oaicite:18]{index=18}</div>
+        </div>
         <ul>
-          <li>Validated, cleansed, and transformed datasets using SQL, Excel, and Python (Pandas) to maintain reporting-quality data.</li>
-          <li>Performed EDA to identify trends, anomalies, and key drivers; shared insights to support business decisions.</li>
-          <li>Delivered dashboards in Power BI and Tableau, improving insight clarity and stakeholder reporting by 25%.</li>
-          <li>Built and optimized complex SQL queries for ad-hoc analysis, operational reporting, and KPI tracking across multiple sources.</li>
-          <li>Automated recurring reports using Python + SQL, reducing manual work and cutting report delivery time by ~40%.</li>
-          <li>Integrated APIs/external sources into analytical pipelines to support near real-time reporting needs and documented definitions/processes.</li>
+          <li>Performed data validation, cleansing, and transformation using SQL, Excel, and Python (Pandas) to ensure high-quality datasets.</li>
+          <li>Conducted EDA to identify trends, anomalies, and performance drivers that informed business decisions.</li>
+          <li>Designed dashboards in Power BI and Tableau, improving reporting clarity by 25%.</li>
+          <li>Built and optimized complex SQL queries for ad-hoc analysis, operational reporting, and KPI tracking.</li>
+          <li>Automated recurring reports using Python + SQL, reducing manual effort and cutting delivery time by ~40%.</li>
+          <li>Integrated APIs/external sources to support near real-time reporting; documented definitions and processes.</li>
+          <li>Collaborated with product, operations, and leadership to translate questions into data-driven insights and narratives.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Data Analyst Intern — Inventive Core Integrations</h3>
-        <div class="meta">Telangana, India · July 2020 – Sept 2021</div>
+        <div class="role">
+          <h3>Data Analyst Intern — Inventive Core Integrations</h3>
+          <div class="meta">Telangana, India · July 2020 – Sept 2021</div>
+        </div>
         <ul>
-          <li>Collected, cleaned, and prepared datasets from internal systems/spreadsheets using SQL, Python (Pandas), and Excel.</li>
-          <li>Performed data quality checks (missing values, duplicates, standardization) and supported EDA for trend/outlier discovery.</li>
-          <li>Wrote SQL queries (SELECT, JOINs, GROUP BY) for reporting and ad-hoc analysis; validated KPI calculations for Power BI outputs.</li>
-          <li>Helped automate recurring reports with Python/Excel; documented metric logic and reporting steps for consistency.</li>
-          <li>Collected and monitored real-time IoT data; supported embedded firmware development and hardware-software integration (C/C++).</li>
+          <li>Collected, cleaned, and prepared raw datasets using SQL, Python (Pandas), and Excel for analysis and dashboards.</li>
+          <li>Performed quality checks (missing values, duplicates, standardization) and assisted EDA to identify trends and outliers</li>
+          <li>Wrote SQL queries (SELECT, JOIN, GROUP BY) to extract datasets for reports and ad-hoc analysis.</li>
+          <li>Supported Power BI dashboard development by validating KPI calculations and ensuring accuracy.</li>
+          <li>Automated simple recurring reports using Python and Excel; documented metric logic and reporting steps.</li>
+          <li>Collected and monitored real-time IoT data; developed and tested embedded firmware in C/C++ and interfaced peripherals (GPIO, UART, SPI, I2C, ADC).</li>
         </ul>
       </div>
     </div>
 
     <!-- EDUCATION -->
-    <div class="section">
-      <h2>Education</h2>
-
-      <div class="card">
-        <h3>Master of Science in Data Science & AI</h3>
-        <div class="meta">Campbellsville University · Kentucky, USA · Aug 2023 – May 2025</div>
+    <div class="section" id="education">
+      <div class="sectionHeader">
+        <h2>Education</h2>
+        <p>Academic foundation in Data Science & Engineering</p>
       </div>
 
-      <div class="card">
-        <h3>Bachelor of Technology in ECE</h3>
-        <div class="meta">JNTUH · Hyderabad, India · Aug 2018 – Sept 2022</div>
+      <div class="grid2">
+        <div class="card">
+          <div class="role">
+            <h3>Master of Science in Data Science & AI</h3>
+            <div class="meta">Campbellsville University · Kentucky, USA · Aug 2023 – May 2025</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <h3>Bachelor of Technology in ECE</h3>
+            <div class="meta">JNTUH · Hyderabad, India · Aug 2018 – Sept 2022</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- CONTACT -->
-    <div class="section">
-      <h2>Contact</h2>
+    <div class="section" id="contact">
+      <div class="sectionHeader">
+        <h2>Contact</h2>
+        <p>Let’s connect</p>
+      </div>
+
       <div class="card">
-        <p><strong>Email:</strong> <a class="inline" href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a></p>
-        <p><strong>Phone:</strong> +1 (850) 964-4733 :contentReference[oaicite:27]{index=27}</p>
-        <p><strong>Location:</strong> Texas, USA :contentReference[oaicite:28]{index=28}</p>
-        <p><strong>LinkedIn:</strong> <a class="inline" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></p>
-        <p><strong>GitHub:</strong> <a class="inline" href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
+        <p><b>Email:</b> <a style="color: rgba(255,255,255,0.92);" href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a></p>
+        <p><b>Phone:</b> +1 (850) 964-4733</p>
+        <p><b>Location:</b> Texas, USA</p>
+
+        <div class="ctaRow" style="margin-top:14px;">
+          <a class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=shivanivanga.reddy@gmail.com&su=Portfolio%20Inquiry"
+             target="_blank" rel="noopener">🚀 Message Me on Gmail</a>
+
+          <!-- Replace the link below with your real LinkedIn URL -->
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        </div>
       </div>
     </div>
 
