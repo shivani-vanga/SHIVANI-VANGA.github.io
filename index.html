@@ -1,76 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivani Vanga | Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
-    .card { background: #fff; border-radius: 14px; padding: 22px; margin: 16px 0; box-shadow: 0 6px 18px rgba(0,0,0,.07); }
-    h1 { margin: 0 0 8px; font-size: 38px; }
-    .tag { font-weight: 600; color: #444; }
-    a { color: #0a66c2; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { padding-left: 18px; }
-    .btn { display: inline-block; margin-top: 14px; padding: 10px 14px; background: #0a66c2; color: #fff; border-radius: 10px; }
-    .btn:hover { opacity: .92; text-decoration: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivani Vanga | Data Analyst</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f4f4;
+  color: #111;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 80px;
+}
+
+.btn {
+  background: #1e63b5;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #154a87;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.project {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  margin-top: 0;
+}
+
+.footer {
+  margin-top: 80px;
+  font-size: 14px;
+  color: #777;
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Shivani Vanga</h1>
-      <div class="tag">Data Analyst · SQL · Power BI · Python</div>
-      <p>I build clean reporting workflows, validate data accuracy, and turn operational data into dashboards and insights.</p>
-        <a href="https://drive.google.com/drive/folders/1r4t18P2ad0Pjwq3Zz-BaX5u3nV9zYA5M?usp=drive_link" target="_blank"
-  style="display:inline-block; padding:10px 15px; background:#0a66c2; color:white; border-radius:8px; text-decoration:none; margin-top:10px;">
-  View Resume
-  </a>
-<a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=shivanivanga.reddy@gmail.com"
-   target="_blank" rel="noopener"
-   style="margin-left:10px;">
-  Email Me
-</a>
-    </div>
 
-    <div class="card">
-      <h2>Skills</h2>
-      <ul>
-        <li><b>Data:</b> SQL, Excel (Pivot Tables, VLOOKUP), Power BI, Tableau</li>
-        <li><b>Programming:</b> Python (Pandas, NumPy)</li>
-        <li><b>Other:</b> Documentation, ticket tracking, data validation</li>
-      </ul>
-    </div>
+<div class="container">
 
-    <div class="card">
-      <h2>Projects</h2>
-
-      <h3>1) SQL Reporting Dashboard</h3>
-      <ul>
-        <li>Wrote SQL queries to extract and aggregate KPIs.</li>
-        <li>Validated results and ensured consistent reporting metrics.</li>
-      </ul>
-
-      <h3>2) Power BI KPI Tracker</h3>
-      <ul>
-        <li>Built dashboards showing trends and operational performance.</li>
-        <li>Created clean visuals to support business decisions.</li>
-      </ul>
-
-      <h3>3) Python Data Cleaning Automation</h3>
-      <ul>
-        <li>Used Pandas to clean, validate, and standardize data.</li>
-        <li>Reduced manual work by automating repetitive steps.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/">Add your LinkedIn link</a></p>
-      <p>GitHub: <a href="https://github.com/">Add your GitHub link</a></p>
-    </div>
+  <!-- HERO SECTION -->
+  <h1>Shivani Vanga</h1>
+  <div class="subtitle">Data Analyst · SQL · Power BI · Python</div>
+  <div class="description">
+    I build clean reporting workflows, validate data accuracy,
+    and transform operational data into structured dashboards and insights.
   </div>
+
+  <div class="buttons">
+    <!-- Replace resume.pdf with your Google Drive link if needed -->
+    <a href="resume.pdf" target="_blank" class="btn">View Resume</a>
+
+    <!-- Email button -->
+    <a href="mailto:shivanivanga.reddy@gmail.com?subject=Portfolio%20Inquiry" class="btn">
+      Email Me
+    </a>
+  </div>
+
+  <!-- SKILLS SECTION -->
+  <div class="section">
+    <h2>Skills</h2>
+    <p><strong>Data & Reporting:</strong> SQL, Excel (Pivot Tables, VLOOKUP), Power BI, Tableau</p>
+    <p><strong>Programming:</strong> Python (Pandas, NumPy)</p>
+    <p><strong>Other:</strong> Data Validation, Documentation, Ticket Tracking, KPI Reporting</p>
+  </div>
+
+  <!-- PROJECTS SECTION -->
+  <div class="section">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>SQL Reporting Dashboard</h3>
+      <p>Developed structured SQL queries to extract, clean, and aggregate KPI data for operational reporting.</p>
+    </div>
+
+    <div class="project">
+      <h3>Power BI KPI Tracker</h3>
+      <p>Built interactive dashboards to visualize business trends and performance metrics.</p>
+    </div>
+
+    <div class="project">
+      <h3>Python Data Cleaning Automation</h3>
+      <p>Automated data validation and transformation using Pandas to improve reporting accuracy.</p>
+    </div>
+
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank">Add Your LinkedIn</a></p>
+    <p>GitHub: <a href="https://github.com/" target="_blank">Add Your GitHub</a></p>
+  </div>
+
+  <div class="footer">
+    © 2026 Shivani Vanga
+  </div>
+
+</div>
+
 </body>
 </html>
