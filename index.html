@@ -1,157 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shivani Vanga | Data Analyst</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shivani Vanga | Data Engineer & Analyst</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f4f4f4;
-  color: #111;
-}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:#f4f4f4;
+    color:#111;
+  }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 100px 20px;
-}
+  .container{
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 96px 20px;
+  }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
+  h1{
+    font-size: 52px;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+  }
 
-.subtitle {
-  font-size: 20px;
-  font-weight: 500;
-  color: #444;
-  margin-bottom: 20px;
-}
+  .subtitle{
+    font-size: 20px;
+    font-weight: 600;
+    color:#3f3f3f;
+    margin-bottom: 18px;
+  }
 
-.description {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
+  .description{
+    font-size: 18px;
+    color:#555;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 760px;
+  }
 
-.buttons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 80px;
-}
+  .buttons{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 70px;
+  }
 
-.btn {
-  background: #1e63b5;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s ease;
-  display: inline-block;
-}
+  .btn{
+    background:#1e63b5;
+    color:#fff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration:none;
+    font-weight: 600;
+    display:inline-block;
+    transition: 0.18s ease;
+  }
+  .btn:hover{ background:#154a87; }
 
-.btn:hover {
-  background: #154a87;
-}
+  .btn.secondary{
+    background:#e9eef7;
+    color:#1e63b5;
+  }
+  .btn.secondary:hover{
+    background:#dbe6fb;
+  }
 
-.section {
-  margin-bottom: 60px;
-}
+  .section{
+    margin: 0 0 56px;
+  }
 
-.section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
+  .section h2{
+    font-size: 28px;
+    margin: 0 0 16px;
+    letter-spacing: -0.2px;
+  }
 
-.project {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
-}
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
 
-.project h3 {
-  margin-top: 0;
-}
+  .pillbox{
+    background:#fff;
+    border-radius: 14px;
+    padding: 18px 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  }
 
-.footer {
-  margin-top: 80px;
-  font-size: 14px;
-  color: #777;
-}
+  .pillbox h3{
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+
+  .pillbox p{
+    margin: 0;
+    color:#555;
+    line-height: 1.6;
+  }
+
+  .card{
+    background:#fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    margin-bottom: 14px;
+  }
+
+  .card h3{
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+
+  .meta{
+    font-size: 14px;
+    color:#666;
+    margin-bottom: 10px;
+  }
+
+  ul{
+    margin: 10px 0 0;
+    padding-left: 18px;
+    color:#444;
+    line-height: 1.65;
+  }
+
+  a.inline{
+    color:#1e63b5;
+    text-decoration:none;
+    font-weight:600;
+  }
+  a.inline:hover{ text-decoration:underline; }
+
+  .footer{
+    margin-top: 70px;
+    font-size: 14px;
+    color:#777;
+  }
+
+  @media (max-width: 760px){
+    h1{ font-size: 40px; }
+    .grid{ grid-template-columns: 1fr; }
+    .container{ padding: 72px 18px; }
+  }
 </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
+    <!-- HERO -->
+    <h1>Shivani Vanga</h1>
+    <div class="subtitle">Data Engineer & Analyst · SQL · Python · PySpark · Azure · Power BI</div>
 
-  <!-- HERO SECTION -->
-  <h1>Shivani Vanga</h1>
-  <div class="subtitle">Data Analyst · SQL · Power BI · Python</div>
-  <div class="description">
-    I build clean reporting workflows, validate data accuracy,
-    and transform operational data into structured dashboards and insights.
-  </div>
-
-  <div class="buttons">
-    <!-- Replace resume.pdf with your Google Drive link if needed -->
-    <a href="resume.pdf" target="_blank" class="btn">View Resume</a>
-
-    <!-- Email button -->
-    <a href="mailto:shivanivanga.reddy@gmail.com?subject=Portfolio%20Inquiry" class="btn">
-      Email Me
-    </a>
-  </div>
-
-  <!-- SKILLS SECTION -->
-  <div class="section">
-    <h2>Skills</h2>
-    <p><strong>Data & Reporting:</strong> SQL, Excel (Pivot Tables, VLOOKUP), Power BI, Tableau</p>
-    <p><strong>Programming:</strong> Python (Pandas, NumPy)</p>
-    <p><strong>Other:</strong> Data Validation, Documentation, Ticket Tracking, KPI Reporting</p>
-  </div>
-
-  <!-- PROJECTS SECTION -->
-  <div class="section">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>SQL Reporting Dashboard</h3>
-      <p>Developed structured SQL queries to extract, clean, and aggregate KPI data for operational reporting.</p>
+    <div class="description">
+      Data Engineer & Analyst with hands-on experience in data analysis, reporting, and analytics automation.
+      Skilled in building ETL pipelines, cleaning and validating data, and delivering KPI dashboards that support
+      executive decision-making. :contentReference[oaicite:1]{index=1}
     </div>
 
-    <div class="project">
-      <h3>Power BI KPI Tracker</h3>
-      <p>Built interactive dashboards to visualize business trends and performance metrics.</p>
+    <div class="buttons">
+      <!-- Option A: If you upload resume.pdf to the repo, keep this -->
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+
+      <!-- Option B (recommended): Gmail compose always works -->
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=shivanivanga.reddy@gmail.com&su=Portfolio%20Inquiry"
+         target="_blank" rel="noopener">Email Me</a>
+
+      <!-- Optional: LinkedIn (replace with your real link) -->
+      <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
 
-    <div class="project">
-      <h3>Python Data Cleaning Automation</h3>
-      <p>Automated data validation and transformation using Pandas to improve reporting accuracy.</p>
+    <!-- SKILLS -->
+    <div class="section">
+      <h2>Skills</h2>
+
+      <div class="grid">
+        <div class="pillbox">
+          <h3>Programming & Querying</h3>
+          <p>Python (Pandas, NumPy, Scikit-learn, Matplotlib), SQL, MySQL, Core Java :contentReference[oaicite:2]{index=2}</p>
+        </div>
+
+        <div class="pillbox">
+          <h3>Visualization</h3>
+          <p>Power BI (DAX, Dashboards, Reports), Tableau, Excel (Pivot Tables, VLOOKUP), Google Sheets :contentReference[oaicite:3]{index=3}</p>
+        </div>
+
+        <div class="pillbox">
+          <h3>Data Engineering</h3>
+          <p>PySpark, Apache Spark, Hadoop, ETL, Data Warehousing :contentReference[oaicite:4]{index=4}</p>
+        </div>
+
+        <div class="pillbox">
+          <h3>Cloud & Tools</h3>
+          <p>Azure, AWS (S3 – basic), Kubernetes, CI/CD, Git, REST APIs :contentReference[oaicite:5]{index=5}</p>
+        </div>
+      </div>
     </div>
 
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <h3>Data Engineer — Community Dreams Foundation</h3>
+        <div class="meta">Remote, USA · Sept 2025 – Present</div>
+        <ul>
+          <li>Designed and maintained end-to-end ETL pipelines using Python, PySpark, and Azure Data Factory for reliable ingestion and transformation of structured datasets. :contentReference[oaicite:6]{index=6}</li>
+          <li>Implemented data cleansing, normalization, and validation using Pandas and SQL to improve accuracy and consistency across downstream dashboards. :contentReference[oaicite:7]{index=7}</li>
+          <li>Optimized processing workflows with Apache Spark to reduce processing time and improve scalability for growing datasets. :contentReference[oaicite:8]{index=8}</li>
+          <li>Built Power BI dashboards and KPI scorecards for leadership to track operational and performance metrics. :contentReference[oaicite:9]{index=9}</li>
+          <li>Gathered requirements and defined KPIs with stakeholders; translated analytical needs into technical data solutions. :contentReference[oaicite:10]{index=10}</li>
+          <li>Developed REST APIs using Flask to expose processed data for internal analytics tools and applications; collaborated with React teams for integration. :contentReference[oaicite:11]{index=11}</li>
+          <li>Supported cloud deployment and version control workflows using Azure, Git, and CI/CD practices with documentation. :contentReference[oaicite:12]{index=12}</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Data Analyst — Inventive Core Integrations</h3>
+        <div class="meta">Telangana, India · June 2022 – July 2023</div>
+        <ul>
+          <li>Validated, cleansed, and transformed datasets using SQL, Excel, and Python (Pandas) to maintain reporting-quality data. :contentReference[oaicite:13]{index=13}</li>
+          <li>Performed EDA to identify trends, anomalies, and key drivers; shared insights to support business decisions. :contentReference[oaicite:14]{index=14}</li>
+          <li>Delivered dashboards in Power BI and Tableau, improving insight clarity and stakeholder reporting by 25%. :contentReference[oaicite:15]{index=15}</li>
+          <li>Built and optimized complex SQL queries for ad-hoc analysis, operational reporting, and KPI tracking across multiple sources. :contentReference[oaicite:16]{index=16}</li>
+          <li>Automated recurring reports using Python + SQL, reducing manual work and cutting report delivery time by ~40%. :contentReference[oaicite:17]{index=17}</li>
+          <li>Integrated APIs/external sources into analytical pipelines to support near real-time reporting needs and documented definitions/processes. :contentReference[oaicite:18]{index=18}</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Data Analyst Intern — Inventive Core Integrations</h3>
+        <div class="meta">Telangana, India · July 2020 – Sept 2021</div>
+        <ul>
+          <li>Collected, cleaned, and prepared datasets from internal systems/spreadsheets using SQL, Python (Pandas), and Excel. :contentReference[oaicite:19]{index=19}</li>
+          <li>Performed data quality checks (missing values, duplicates, standardization) and supported EDA for trend/outlier discovery. :contentReference[oaicite:20]{index=20}</li>
+          <li>Wrote SQL queries (SELECT, JOINs, GROUP BY) for reporting and ad-hoc analysis; validated KPI calculations for Power BI outputs. :contentReference[oaicite:21]{index=21}</li>
+          <li>Helped automate recurring reports with Python/Excel; documented metric logic and reporting steps for consistency. :contentReference[oaicite:22]{index=22}</li>
+          <li>Collected and monitored real-time IoT data; supported embedded firmware development and hardware-software integration (C/C++). :contentReference[oaicite:23]{index=23}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <h2>Education</h2>
+
+      <div class="card">
+        <h3>Master of Science in Data Science & AI</h3>
+        <div class="meta">Campbellsville University · Kentucky, USA · Aug 2023 – May 2025 :contentReference[oaicite:24]{index=24}</div>
+      </div>
+
+      <div class="card">
+        <h3>Bachelor of Technology in ECE</h3>
+        <div class="meta">JNTUH · Hyderabad, India · Aug 2018 – Sept 2022 :contentReference[oaicite:25]{index=25}</div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><strong>Email:</strong> <a class="inline" href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a> :contentReference[oaicite:26]{index=26}</p>
+        <p><strong>Phone:</strong> +1 (850) 964-4733 :contentReference[oaicite:27]{index=27}</p>
+        <p><strong>Location:</strong> Texas, USA :contentReference[oaicite:28]{index=28}</p>
+        <p><strong>LinkedIn:</strong> <a class="inline" href="https://www.linkedin.com/" target="_blank" rel="noopener">Add your LinkedIn URL</a></p>
+        <p><strong>GitHub:</strong> <a class="inline" href="https://github.com/" target="_blank" rel="noopener">Add your GitHub URL</a></p>
+      </div>
+    </div>
+
+    <div class="footer">© 2026 Shivani Vanga</div>
+
   </div>
-
-  <!-- CONTACT SECTION -->
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:shivanivanga.reddy@gmail.com">shivanivanga.reddy@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank">Add Your LinkedIn</a></p>
-    <p>GitHub: <a href="https://github.com/" target="_blank">Add Your GitHub</a></p>
-  </div>
-
-  <div class="footer">
-    © 2026 Shivani Vanga
-  </div>
-
-</div>
-
 </body>
 </html>
